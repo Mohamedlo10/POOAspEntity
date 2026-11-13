@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Menu de l'application : une entrée par module du parcours Learn
+     « Créer des applications mobiles et de bureau avec .NET MAUI » -->
+<Shell
+    x:Class="P8Maui.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:m1="clr-namespace:P8Maui.M1Phoneword"
+    xmlns:m2="clr-namespace:P8Maui.M2Notes"
+    xmlns:m3="clr-namespace:P8Maui.M3Disposition"
+    xmlns:m4="clr-namespace:P8Maui.M4Meteo"
+    xmlns:m5="clr-namespace:P8Maui.M5Films"
+    xmlns:m6="clr-namespace:P8Maui.M6Pourboire"
+    xmlns:m7="clr-namespace:P8Maui.M7Astronomie"
+    xmlns:m8="clr-namespace:P8Maui.M8Contacts"
+    Title="P8Maui"
+    FlyoutBehavior="Flyout">
+
+    <Shell.FlyoutHeader>
+        <Grid HeightRequest="100" BackgroundColor="#512BD4">
+            <Label Text="P8Maui&#10;Parcours .NET MAUI"
+                   TextColor="White"
+                   FontAttributes="Bold"
+                   FontSize="18"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center" />
+        </Grid>
+    </Shell.FlyoutHeader>
+
+    <!-- Module 1 : Créer une application multiplateforme avec .NET MAUI -->
+    <FlyoutItem Title="1 - Phoneword">
+        <ShellContent ContentTemplate="{DataTemplate m1:PhonewordPage}" Route="phoneword" />
+    </FlyoutItem>
+
+    <!-- Module 2 : Créer une interface utilisateur avec XAML -->
+    <FlyoutItem Title="2 - Notes (XAML)">
+        <ShellContent ContentTemplate="{DataTemplate m2:NotesPage}" Route="notes" />
+    </FlyoutItem>
+
+    <!-- Module 3 : Personnaliser la disposition dans les pages XAML -->
+    <FlyoutItem Title="3 - Disposition">
+        <Tab Title="Alignment">
+            <ShellContent ContentTemplate="{DataTemplate m3:AlignmentPage}" Route="alignment" />
+        </Tab>
+        <Tab Title="Tip Calculator">
+            <ShellContent ContentTemplate="{DataTemplate m3:TipCalculatorPage}" Route="tipcalculator" />
+        </Tab>
+    </FlyoutItem>
+
+    <!-- Module 4 : Liaison de données -->
+    <FlyoutItem Title="4 - Météo (liaison de données)">
+        <ShellContent ContentTemplate="{DataTemplate m4:WeatherPage}" Route="weather" />
+    </FlyoutItem>
+
+    <!-- Module 5 : ViewModel MVVM -->
+    <FlyoutItem Title="5 - Films (MVVM)">
+        <ShellContent ContentTemplate="{DataTemplate m5:MoviesPage}" Route="movies" />
+    </FlyoutItem>
+
+    <!-- Module 6 : Ressources partagées -->
+    <FlyoutItem Title="6 - Pourboire (ressources)">
+        <Tab Title="Standard Tip">
+            <ShellContent ContentTemplate="{DataTemplate m6:StandardTipPage}" Route="standardtip" />
+        </Tab>
+        <Tab Title="Custom Tip">
+            <ShellContent ContentTemplate="{DataTemplate m6:CustomTipPage}" Route="customtip" />
+        </Tab>
+    </FlyoutItem>
+
+    <!-- Module 7 : Applications multipages (onglets et menu volant) -->
+    <FlyoutItem Title="7 - Astronomie">
+        <Tab Title="Moon Phase">
+            <ShellContent ContentTemplate="{DataTemplate m7:MoonPhasePage}" Route="moonphase" />
+        </Tab>
+        <Tab Title="Sunrise">
+            <ShellContent ContentTemplate="{DataTemplate m7:SunrisePage}" Route="sunrise" />
+        </Tab>
+        <Tab Title="Astronomical Bodies">
+            <ShellContent ContentTemplate="{DataTemplate m7:AstronomicalBodiesPage}" Route="astronomicalbodies" />
+        </Tab>
+        <Tab Title="About">
+            <ShellContent ContentTemplate="{DataTemplate m7:AboutPage}" Route="about" />
+        </Tab>
+    </FlyoutItem>
+
+    <!-- Module 8 : Données locales avec SQLite -->
+    <FlyoutItem Title="8 - Contacts (SQLite)">
+        <ShellContent ContentTemplate="{DataTemplate m8:PeoplePage}" Route="people" />
+    </FlyoutItem>
+
+</Shell>
