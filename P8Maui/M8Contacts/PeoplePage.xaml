@@ -1,9 +1,48 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:model="clr-namespace:P8Maui.M8Contacts.Models"
              x:Class="P8Maui.M8Contacts.PeoplePage"
-             Title="People">
-    <Label Text="Module 8 : page à réaliser"
-           HorizontalOptions="Center"
-           VerticalOptions="Center" />
+             Title="People"
+             BackgroundColor="{DynamicResource Light}">
+
+    <ContentPage.Resources>
+        <!-- Couleur « Light » du projet People (absente des couleurs de l'application) -->
+        <Color x:Key="Light">#DFD8F7</Color>
+    </ContentPage.Resources>
+
+    <Grid Padding="5" RowSpacing="5" ColumnSpacing="5"
+          RowDefinitions="Auto,Auto,Auto,Auto,*">
+
+        <!-- MaxLength : même limite que la colonne Name (250) ; fond du style Entry du projet People -->
+        <Entry x:Name="newPerson"
+           Placeholder="Enter name"
+           MaxLength="250"
+           BackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}" />
+
+        <Button Text="Add Person"
+            Grid.Row="1"
+            Clicked="OnNewButtonClicked" />
+
+        <Label x:Name="statusMessage"
+           TextColor="{StaticResource Primary}"
+           Grid.Row="2" />
+
+        <Button Text="Get All People"
+            Grid.Row="3"
+            Clicked="OnGetButtonClicked" />
+
+        <CollectionView x:Name="peopleList" Grid.Row="4">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="model:Person">
+                    <Grid ColumnDefinitions="*,2*">
+                        <Label Text="{Binding Id}" TextColor="{StaticResource Primary}"/>
+                        <Label Grid.Column="1" Text="{Binding Name}" TextColor="{StaticResource Primary}"/>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </Grid>
+
 </ContentPage>
