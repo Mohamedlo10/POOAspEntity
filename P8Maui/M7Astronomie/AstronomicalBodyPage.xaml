@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="P8Maui.M7Astronomie.AstronomicalBodyPage"
+             Title="Astronomical Data">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="textColor">White</Color>
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource textColor}" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior IconOverride="m7_comet.png"/>
+    </Shell.BackButtonBehavior>
+
+    <Grid RowSpacing="10" ColumnSpacing="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Image Aspect="AspectFill" Grid.RowSpan="6" Grid.ColumnSpan="2" Source="m7_starfield.png" />
+
+        <Label x:Name="lblIcon" FontSize="96" Grid.Row="0" Grid.ColumnSpan="2" HorizontalOptions="Center" />
+        <!-- FontSize="Medium" (taille nommée obsolète en .NET 10) remplacé par 18 -->
+        <Label x:Name="lblName" FontSize="18" FontAttributes="Bold" Grid.Row="1" Grid.ColumnSpan="2" HorizontalOptions="Center" />
+
+        <Label FontSize="18" FontAttributes="Bold" Grid.Row="2" HorizontalOptions="End" Text="Mass:" />
+        <Label FontSize="18" FontAttributes="Bold" Grid.Row="3" HorizontalOptions="End" Text="Circumference:" />
+        <Label FontSize="18" FontAttributes="Bold" Grid.Row="4" HorizontalOptions="End" Text="Age:" />
+
+        <Label x:Name="lblMass" FontSize="18" Grid.Row="2" Grid.Column="1" />
+        <Label x:Name="lblCircumference" FontSize="18" Grid.Row="3" Grid.Column="1" />
+        <Label x:Name="lblAge" FontSize="18" Grid.Row="4" Grid.Column="1" />
+    </Grid>
+</ContentPage>

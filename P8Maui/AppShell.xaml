@@ -68,17 +68,17 @@
     </FlyoutItem>
 
     <!-- Module 7 : Applications multipages (onglets et menu volant) -->
-    <FlyoutItem Title="7 - Astronomie">
-        <Tab Title="Moon Phase">
+    <FlyoutItem Title="7 - Astronomie" Icon="m7_moon.png">
+        <Tab Title="Moon Phase" Icon="m7_moon.png">
             <ShellContent ContentTemplate="{DataTemplate m7:MoonPhasePage}" Route="moonphase" />
         </Tab>
-        <Tab Title="Sunrise">
+        <Tab Title="Sunrise" Icon="m7_sun.png">
             <ShellContent ContentTemplate="{DataTemplate m7:SunrisePage}" Route="sunrise" />
         </Tab>
-        <Tab Title="Astronomical Bodies">
+        <Tab Title="Bodies" Icon="m7_comet.png">
             <ShellContent ContentTemplate="{DataTemplate m7:AstronomicalBodiesPage}" Route="astronomicalbodies" />
         </Tab>
-        <Tab Title="About">
+        <Tab Title="About" Icon="m7_question.png">
             <ShellContent ContentTemplate="{DataTemplate m7:AboutPage}" Route="about" />
         </Tab>
     </FlyoutItem>

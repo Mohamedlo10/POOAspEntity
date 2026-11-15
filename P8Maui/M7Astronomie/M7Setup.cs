@@ -5,5 +5,6 @@ public static class M7Setup
 {
     public static void RegisterRoutes()
     {
+        Routing.RegisterRoute("astronomicalbodydetails", typeof(AstronomicalBodyPage));
     }
 }
