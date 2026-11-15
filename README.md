@@ -110,7 +110,7 @@ Dans Visual Studio 2026 sous Windows : choisir la cible *Windows Machine* (ou un
 
 ## 4. Captures Microsoft Learn
 
-Captures demandées par le TP (photo, titre de la formation et points obtenus sur Microsoft Learn) :
+Les captures demandées par le TP (photo, titre de la formation et points obtenus sur Microsoft Learn) sont jointes au rendu sur Classroom :
 
-- P5AspEntity : *à ajouter*
-- P8Maui : *à ajouter*
+- **P5AspEntity** : module *Utiliser une base de données avec une API minimale, Entity Framework Core et ASP.NET Core* terminé (« Évaluation du module réussie »).
+- **P8Maui** : trophée du parcours *Créer des applications mobiles et de bureau avec .NET MAUI* (les 8 modules terminés).
